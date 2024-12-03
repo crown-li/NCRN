@@ -1,0 +1,17 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run start:dev -w server\" \"npm run dev -w client\"",
+    "build": "concurrently \"npm run start:prod -w server\" \"npm run build -w client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
